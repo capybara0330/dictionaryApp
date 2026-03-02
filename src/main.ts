@@ -196,10 +196,10 @@ const displayError = (message: string): void => {
   definitionsSection.appendChild(error);
 };
 
-const inputWord = document.getElementById("input");
-const submitBtn = document.getElementById("submit");
-submitBtn?.addEventListener("click", async () => {
-  const word = inputWord?.value.trim();
+const inputWord = document.getElementById("input") as HTMLInputElement;
+const submitBtn = document.getElementById("submit") as HTMLButtonElement;
+submitBtn.addEventListener("click", async () => {
+  const word: string = inputWord?.value.trim();
   if (!word) return;
 
   try {
